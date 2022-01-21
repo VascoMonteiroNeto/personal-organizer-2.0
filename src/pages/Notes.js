@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Container, Grid, Paper } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import CardComponent from '../components/CardComponent'
 
 
@@ -26,7 +26,7 @@ const Notes = () => {
 
                 {
                     notes.map(note => (
-                        <Grid item xs={12} md={6} lg={4} key={note.id}>
+                        <Grid alignItems="flex-start" item xs={12} md={6} lg={4} key={note.id}>
                             <CardComponent cardNote={note} />
                         </Grid>
 

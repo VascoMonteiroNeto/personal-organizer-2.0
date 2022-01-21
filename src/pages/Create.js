@@ -10,7 +10,6 @@ const useStyles = makeStyles({
     btn: {
         background: 'linear-gradient(45deg, #FE6B8B 30%, #a33a7e 90%)',
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        width: 'fit-content',
     },
     fields: {
         margin: 1,
@@ -19,7 +18,7 @@ const useStyles = makeStyles({
     myForm: {
         display: 'Flex',
         flexDirection: 'Column',
-        alignItems: 'center',
+        alignItems: 'center'
     },
 });
 
@@ -28,7 +27,7 @@ const Notes = () => {
     const classes = useStyles();
     const [title, setTitle] = useState('')
     const [details, setDetails] = useState('')
-    const [category, setCategory] = useState('remark')
+    const [category, setCategory] = useState('Reminder')
     const [open, setOpen] = useState(false)
 
     const [titleError, setTitleError] = useState(false)
@@ -112,11 +111,10 @@ const Notes = () => {
                     error={detailsError}
                 />
                 <FormControl margin='normal'>
-                    <FormLabel component="legend">Category</FormLabel>
                     <RadioGroup row value={category} onChange={(e) => setCategory(e.target.value)}>
-                        <FormControlLabel labelPlacement="bottom" value="remind" control={<Radio />} label="Reminder" />
-                        <FormControlLabel labelPlacement="bottom" value="todo" control={<Radio color="success" />} label="Todos" />
-                        <FormControlLabel labelPlacement="bottom" value="urgent" control={<Radio color="error" />} label="Urgent" />
+                        <FormControlLabel labelPlacement="bottom" value="Reminder" control={<Radio />} label="Reminder" />
+                        <FormControlLabel labelPlacement="bottom" value="Todo" control={<Radio color="success" />} label="To do" />
+                        <FormControlLabel labelPlacement="bottom" value="Urgent" control={<Radio color="error" />} label="Urgent" />
                     </RadioGroup>
                 </FormControl>
                 <Button
